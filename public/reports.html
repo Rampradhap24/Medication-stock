@@ -81,7 +81,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", async function () {
     try {
-      const res = await fetch('http://localhost:5500/api/medications/inventory');
+      const res = await fetch('https://medication-api.onrender.com/api/medications/inventory');
       if (!res.ok) throw new Error('Failed to fetch chart data');
       const meds = await res.json();
 

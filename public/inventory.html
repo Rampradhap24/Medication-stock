@@ -185,7 +185,7 @@
       }
 
       try {
-        const res = await fetch('http://localhost:5500/api/medications/add', {
+        const res = await fetch('https://medication-stock.onrender.com/api/medications/add', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
@@ -207,7 +207,7 @@
     });
 
     async function loadInventory() {
-      const res = await fetch('http://localhost:5500/api/medications/inventory');
+      const res = await fetch('https://medication-stock.onrender.com/api/medications/inventory');
       const meds = await res.json();
       tableBody.innerHTML = '';
       meds.forEach(med => {
@@ -227,7 +227,7 @@
       const doc = new jsPDF();
       doc.text("Medication Inventory", 14, 15);
 
-      const res = await fetch('http://localhost:5500/api/medications/inventory');
+      const res = await fetch('https://medication-stock.onrender.com/api/medications/inventory');
       const meds = await res.json();
 
       const rows = meds.map(med => [

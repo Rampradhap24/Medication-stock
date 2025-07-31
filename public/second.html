@@ -101,7 +101,7 @@
 
 <script>
   async function loadTotalCount() {
-    const res = await fetch('http://localhost:5500/api/medications/total');
+    const res = await fetch('https://medication-stock.onrender.com/api/medications/total');
     const data = await res.json();
     document.getElementById('totalCount').innerText = `${data.total}`;
   }
